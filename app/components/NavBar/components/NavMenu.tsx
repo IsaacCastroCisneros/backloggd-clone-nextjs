@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Button from '../../global-components/Button'
 import Input from '../../global-components/Input';

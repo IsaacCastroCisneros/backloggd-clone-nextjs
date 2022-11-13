@@ -23,9 +23,12 @@ export default function RootLayout({
     <MainContext.Provider value={values}>
       <html>
         <head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <title>Backloggd Clone</title>
         </head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <body>
           <header className="block">
             <NavBar />
@@ -34,5 +37,5 @@ export default function RootLayout({
         </body>
       </html>
     </MainContext.Provider>
-  )
+  );
 }

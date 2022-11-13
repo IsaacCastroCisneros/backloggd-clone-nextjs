@@ -1,6 +1,6 @@
 'use client'
 
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -18,8 +18,14 @@ import NavMenu from './components/NavMenu'
 export default function NavBar({name='ronin'}) 
 {
   const[toggle,setToggle]=useState<boolean>(false)
+  const[jmm,setJmm]=useState<boolean>(false)
+
   const{mob}=useContext(MainContext)
 
+  useEffect(()=>
+  {
+    setJmm(mob)
+  },[])
 
   return (
     <>
@@ -31,7 +37,7 @@ export default function NavBar({name='ronin'})
           <Link href="/" className="text-[1.2rem] mr-[.5rem] hover:text-[#fff]">
             <FontAwesomeIcon icon={faBell} />
           </Link>
-          {!mob && (
+          {!jmm && (
             <li className="user-button capitalize relative px-[.5rem] hover:bg-bg2 rounded-t-[.3rem]">
               <div className="flex items-center gap-[.8rem]">
                 <span className="cursor-pointer hover:text-[#fff] py-[.4rem] block">
@@ -51,7 +57,7 @@ export default function NavBar({name='ronin'})
           <li className="mr-[1rem] hover:text-[#fff] ml-[.5rem]">
             <Link href={"/"}>Games</Link>
           </li>
-          {!mob && (
+          {!jmm && (
             <li className="flex gap-[.5rem]">
               <Input
                 placeHolder="Search"
@@ -69,7 +75,7 @@ export default function NavBar({name='ronin'})
               />
             </li>
           )}
-          {mob && (
+          {jmm && (
             <button className="rounded-[.3rem] text-text text-[1.5rem] border-[1px] border-text3 px-[1rem] py-[.1rem]"
              onClick={()=>setToggle(prev=>!prev)}
              >
@@ -77,8 +83,11 @@ export default function NavBar({name='ronin'})
             </button>
           )}
         </ul>
+        {
+          jmm&&<ul>loool</ul>
+        }
       </nav>
-      {mob&&toggle&&<NavMenu/>}
+      {jmm&&toggle&&<NavMenu/>}
     </>
   );
 }
