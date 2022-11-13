@@ -1,18 +1,10 @@
 'use client'
 
-import React,{createContext} from "react"
+import React,{createContext,useContext} from "react"
 import NavBar from "./components/NavBar/NavBar"
 import '../styles/globals.css'
 import { useMediaQuery } from 'react-responsive'
-
-interface AppContext
-{
-  mob:boolean
-}
-
-export const AppContext = createContext<AppContext>({
-  mob:false
-});
+import { MainContext } from "./context/mainContext"
 
 export default function RootLayout({
   children,
@@ -22,13 +14,13 @@ export default function RootLayout({
 
   const mob = useMediaQuery({maxWidth:'767px'})
 
-  const appContextValues:AppContext=
+  const values=
   {
-     mob
+    mob
   }
 
   return (
-    <AppContext.Provider value={appContextValues}>
+    <MainContext.Provider value={values}>
       <html>
         <head>
           <title>Backloggd Clone</title>
@@ -40,6 +32,6 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </AppContext.Provider>
+    </MainContext.Provider>
   );
 }

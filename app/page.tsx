@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function App() {
+export default function App() 
+{
+
   return (
-    <h1>looo</h1>
+      <h1>looo</h1>
   )
 }

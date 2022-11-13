@@ -4,19 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
-import useMediaQuery from 'react-responsive/types/useMediaQuery'
+import { MainContext } from '../../context/mainContext'
 
 import UserNavOption from './components/UserNavOption'
 import Input from '../global-components/Input'
 import Button from '../global-components/Button'
-import { AppContext } from '../../layout'
 import NavMenu from './components/NavMenu'
 
 
 export default function NavBar({name='ronin'}) 
 {
-
-  const{mob}=useContext(AppContext)
+  const{mob}=useContext(MainContext)
 
   return (
     <>
