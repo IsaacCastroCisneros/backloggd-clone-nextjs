@@ -1,10 +1,10 @@
 'use client'
 
-import React,{createContext,useContext} from "react"
+import React from "react"
 import NavBar from "./components/NavBar/NavBar"
-import '../styles/globals.css'
 import { useMediaQuery } from 'react-responsive'
 import { MainContext } from "./context/mainContext"
+import '../styles/globals.css'
 
 export default function RootLayout({
   children,
@@ -25,6 +25,7 @@ export default function RootLayout({
         <head>
           <title>Backloggd Clone</title>
         </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <body>
           <header className="block">
             <NavBar />
@@ -33,5 +34,5 @@ export default function RootLayout({
         </body>
       </html>
     </MainContext.Provider>
-  );
+  )
 }

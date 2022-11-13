@@ -1,6 +1,6 @@
 'use client'
 
-import React,{useState,useContext, useEffect} from 'react'
+import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -13,22 +13,13 @@ import UserNavOption from './components/UserNavOption'
 import Input from '../global-components/Input'
 import Button from '../global-components/Button'
 import NavMenu from './components/NavMenu'
-import { useMediaQuery } from 'react-responsive'
 
 
 export default function NavBar({name='ronin'}) 
 {
   const[toggle,setToggle]=useState<boolean>(false)
- /*  const[mob,setMob]=useState<boolean>(false) */
   const{mob}=useContext(MainContext)
-  console.log('heeeey')
 
-  /*  useEffect(()=>
-   {
-     setMob(prev=>!prev)
-   },[]) */
-
-   console.log('hey')
 
   return (
     <>
