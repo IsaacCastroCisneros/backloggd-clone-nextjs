@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const mob = useMediaQuery({maxWidth:'767px'})
+  const mob = useMediaQuery({ query: '(max-width: 756px)' })
 
   const values=
   {

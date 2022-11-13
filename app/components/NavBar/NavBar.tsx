@@ -1,8 +1,11 @@
-import React,{useContext} from 'react'
+'use client'
+
+import React,{useState,useContext, useEffect} from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
 import { MainContext } from '../../context/mainContext'
 
@@ -10,11 +13,22 @@ import UserNavOption from './components/UserNavOption'
 import Input from '../global-components/Input'
 import Button from '../global-components/Button'
 import NavMenu from './components/NavMenu'
+import { useMediaQuery } from 'react-responsive'
 
 
 export default function NavBar({name='ronin'}) 
 {
+  const[toggle,setToggle]=useState<boolean>(false)
+ /*  const[mob,setMob]=useState<boolean>(false) */
   const{mob}=useContext(MainContext)
+  console.log('heeeey')
+
+  /*  useEffect(()=>
+   {
+     setMob(prev=>!prev)
+   },[]) */
+
+   console.log('hey')
 
   return (
     <>
@@ -64,9 +78,16 @@ export default function NavBar({name='ronin'})
               />
             </li>
           )}
+          {mob && (
+            <button className="rounded-[.3rem] text-text text-[1.5rem] border-[1px] border-text3 px-[1rem] py-[.1rem]"
+             onClick={()=>setToggle(prev=>!prev)}
+             >
+              <FontAwesomeIcon icon={faBars} />
+            </button>
+          )}
         </ul>
       </nav>
-      {mob && <NavMenu />}
+      {mob&&toggle&&<NavMenu/>}
     </>
   );
 }
