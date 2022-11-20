@@ -2,8 +2,6 @@
 
 import React from "react"
 import NavBar from "./components/NavBar/NavBar"
-import { useMediaQuery } from 'react-responsive'
-import { MainContext } from "./context/mainContext"
 import '../styles/globals.css'
 
 export default function RootLayout({
@@ -12,15 +10,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const mob = useMediaQuery({ query: '(max-width: 756px)' })
-
-  const values=
-  {
-    mob
-  }
-
   return (
-    <MainContext.Provider value={values}>
       <html>
         <head>
           <meta
@@ -36,6 +26,5 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </MainContext.Provider>
   );
 }

@@ -17,11 +17,20 @@ module.exports = {
       placeHolder:'#6c757d',
       bg2:'#4a5e8d'
     },
+    screens:
+    {
+      mob:{'max':'767px'}
+    },
     extend: {
       width:
       {
         container:'1110px'
+      },
+      fontSize:
+      {
+        title:'3.1rem'
       }
+
     },
   },
   plugins: [],

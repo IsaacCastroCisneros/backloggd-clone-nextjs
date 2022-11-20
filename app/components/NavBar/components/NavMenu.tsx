@@ -6,9 +6,15 @@ import Input from '../../global-components/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-export default function NavMenu() {
+interface navMenu
+{
+  styles:string
+}
+
+export default function NavMenu({styles=''}:navMenu) 
+{
   return (
-    <div className="flex flex-col custom-container">
+    <div className={`flex flex-col custom-container ${styles}`} >
       <Input
         placeHolder="search"
         icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}

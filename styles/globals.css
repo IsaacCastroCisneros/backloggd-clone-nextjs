@@ -12,9 +12,10 @@ body
   height: 100vh;
   background-color: #16181c;
   font-weight: normal !important;
+  color: #8f9ca7;
 }
 
-.custom-container
+.custom-container,.custom-container-2
 {
   width: 1110px;
   margin: 0 auto;
@@ -23,7 +24,12 @@ body
   padding-right: 15px;
 }
 
-@media only screen and(max-width:767px) 
+.custom-container-2
+{
+  width: 35rem;
+}
+
+@media only screen and (max-width:767px) 
 {
    .custom-container
    {
