@@ -1,6 +1,7 @@
-import Joi from 'joi'
+import Joi, { ObjectSchema } from 'joi'
 
-export const signUp = Joi.object({
+
+export const signUp:ObjectSchema = Joi.object({
     userName: Joi.string().min(5).max(16).required().regex(/^[_a-zA-Z0-9]*$/m).messages({
       "string.empty": `user name field cant be blank`,
       "any.required": `user name is require`,
