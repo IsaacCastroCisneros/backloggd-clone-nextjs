@@ -6,6 +6,7 @@ interface props
 {
   placeHolder:string;
   icon?:React.ReactNode|string;
+  type?:string
   phOpacity?:string;
   styles?:string;
   errMsg?:string;
@@ -25,6 +26,7 @@ export default function Input(props:props)
     styles='',
     errMsg='',
     underText='',
+    type='text',
     onChange=undefined   
   }=props
 
@@ -36,12 +38,12 @@ export default function Input(props:props)
         onBlur={()=>setBorder(false)}
       >
         <input
-          type="text"
+          type={type}
           placeholder={placeHolder}
           className={`bg-[transparent] font-normal text-[#fff] outline-none placeholder:${phOpacity} flex-1`}
           onChange={onChange}
         />
-        {icon!==''&&
+        {icon&&
           <button className="hover:text-[#fff] block pl-[.5rem] text-text2">
             {icon}
           </button>

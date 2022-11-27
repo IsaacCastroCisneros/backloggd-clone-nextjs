@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import Button from '../../global-components/Button'
-import Input from '../../global-components/Input';
+import Button from '../../Button/Button'
+import Input from '../../Input/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 

@@ -7,11 +7,10 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
-import { MainContext } from '../../context/mainContext'
 
 import UserNavOption from './components/UserNavOption'
-import Input from '../global-components/Input'
-import Button from '../global-components/Button'
+import Input from '../Input/Input'
+import Button from '../Button/Button'
 import NavMenu from './components/NavMenu'
 
 

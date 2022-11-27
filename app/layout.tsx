@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react"
-import NavBar from "./components/NavBar/NavBar"
+import NavBar from "../components/NavBar/NavBar"
 import '../styles/globals.css'
 
 export default function RootLayout({
@@ -22,6 +22,7 @@ export default function RootLayout({
         <body>
           <header className="block">
             <NavBar />
+            <span className=" text-[2rem]" >heeeey</span>
           </header>
           {children}
         </body>

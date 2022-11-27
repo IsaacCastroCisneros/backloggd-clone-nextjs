@@ -1,6 +1,7 @@
 import { ObjectSchema } from 'joi'
-import React,{useEffect,useState} from 'react'
-import { userParams } from '../user/sign_up/components/SignUpForm'
+import {useEffect,useState} from 'react'
+
+import userParams from '../interfaces/userParams';
 
 export default function useErrList(
   userParams: userParams,

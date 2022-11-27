@@ -4,6 +4,8 @@ export default function App()
 {
 
   return (
-      <h1>looo</h1>
+      <main className='custom-container'>
+          
+      </main>
   )
 }
