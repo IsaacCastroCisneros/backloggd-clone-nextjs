@@ -12,6 +12,7 @@ import UserNavOption from './components/UserNavOption'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 import NavMenu from './components/NavMenu'
+import SearchBar from './components/SearchBar'
 
 
 export default function NavBar({name='ronin'}) 
@@ -47,21 +48,8 @@ export default function NavBar({name='ronin'})
             <Link href={"/"}>Games</Link>
           </li>
           <li className="mob:hidden flex gap-[.5rem]">
-              <Input
-                placeHolder="Search"
-                icon={<FontAwesomeIcon icon={faMagnifyingGlass} size={"lg"} />}
-              />
-              <Button
-                label={
-                  <p>
-                    <span className="font-bold text-[1.2rem] leading-[0px]">
-                      +
-                    </span>
-                    Log a Game
-                  </p>
-                }
-              />
-            </li>
+              <SearchBar/>
+          </li>
             <button className="mob:block hidden rounded-[.3rem] text-text text-[1.5rem] border-[1px] border-text3 px-[1rem] py-[.1rem]"
              onClick={()=>setToggle(prev=>!prev)}
              >

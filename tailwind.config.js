@@ -16,7 +16,9 @@ module.exports = {
       field:'#30394c',
       placeHolder:'#6c757d',
       placeHolder2:'#8f9c9e',
-      bg2:'#4a5e8d'
+      bg2:'#4a5e8d',
+      bg3:'#242832',
+      myPurple:'#856fef'
     },
     screens:
     {
