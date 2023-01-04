@@ -19,6 +19,7 @@ module.exports = {
       bg2:'#4a5e8d',
       bg3:'#242832',
       myPurple:'#856fef'
+
     },
     screens:
     {

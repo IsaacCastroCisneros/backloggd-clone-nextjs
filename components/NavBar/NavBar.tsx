@@ -9,8 +9,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
 
 import UserNavOption from './components/UserNavOption'
-import Input from '../Input/Input'
-import Button from '../Button/Button'
 import NavMenu from './components/NavMenu'
 import SearchBar from './components/SearchBar'
 
@@ -22,7 +20,7 @@ export default function NavBar({name='ronin'})
   return (
     <>
       <nav className="custom-container py-[.8rem] !flex justify-between">
-        <Link href="/">
+        <Link href="/" replace>
           <strong className="text-[#fff] text-[1.5rem]">Backloggd</strong>
         </Link>
         <ul className="text-text2 font-bold flex items-center">
@@ -36,8 +34,8 @@ export default function NavBar({name='ronin'})
                 </span>
                 <FontAwesomeIcon icon={faChevronDown} size={"sm"} />
               </div>
-              <ul className="user-dropdom-menu flex flex-col hidden pointer-events-none absolute rounded-b-[.3rem] bg-bg2 w-[100%] left-0 overflow-hidden">
-                <UserNavOption url={"/"} underline={true} label={"profile"} />
+              <ul className="user-dropdom-menu flex-col hidden pointer-events-none absolute rounded-b-[.3rem] bg-bg2 w-[100%] left-0 overflow-hidden">
+                <UserNavOption url={"/"} underline={true} label={"profile"}/>
                 <UserNavOption url={"/"} label={"played"} />
                 <UserNavOption url={"/"} label={"playing"} />
                 <UserNavOption url={"/"} label={"backlog"} />

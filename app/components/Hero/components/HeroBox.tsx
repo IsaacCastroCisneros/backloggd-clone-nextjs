@@ -37,9 +37,9 @@ export default function HeroBox(props:props)
       <section>
         {
           <ul>
-            {list.map((item) => {
+            {list.map((item,pos) => {
               return (
-                <li className="list-none flex items-center gap-[.5rem]">
+                <li key={pos} className="list-none flex items-center gap-[.5rem]">
                   <span className="text-myPurple">
                     <FontAwesomeIcon icon={item.icon} />
                   </span>

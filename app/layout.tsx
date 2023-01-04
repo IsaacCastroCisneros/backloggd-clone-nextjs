@@ -1,22 +1,8 @@
-'use client'
-
 import Link from "next/link"
 import React from "react"
 import NavBar from "../components/NavBar/NavBar"
 import '../styles/globals.css'
-/* import { QueryClientProvider,QueryClient } from "react-query"
 
-const queryClient = new QueryClient(
-  {
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: false,
-        refetchOnReconnect: false,
-        retry: false,
-      },
-    },
-  }
-); */
 
 export default function RootLayout({
   children,

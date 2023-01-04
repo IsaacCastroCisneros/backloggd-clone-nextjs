@@ -1,27 +1,22 @@
 import axios from 'axios'
 import React from 'react'
-
-async function getGames(game)
+import Results from './components/Results';
+interface props
 {
-    const res = await axios.get(`https://api.rawg.io/api/games?key=3d53a095c9ba4dbea25f8e0e580df904&search=${game}`)
-    return res.data
+  searchParams:searchParams
+}
+interface searchParams
+{
+  games?:string
 }
 
-export default async function Games({searchParams}) 
+export default async function page({searchParams}:props) 
 {
   const{games}=searchParams
-  const gameList = await getGames(games)
 
   return (
-    <div>
-       {
-         gameList.results.map(gaem=>
-          {
-            return (
-               <img src={gaem.background_image} alt="" />
-            )
-          })
-       }
-    </div>
-  )
+      <main className="custom-container">
+        <Results query={games||''} />
+      </main>
+  );
 }

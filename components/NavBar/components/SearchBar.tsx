@@ -17,19 +17,13 @@ export default function SearchBar()
   const router = useRouter();
   const[searchParams,setSearchParams]=useState<searchParams>({})
 
-  function submittingParams(e:React.FormEvent)
-  {
-     e.preventDefault();
-     router.push(`/search?games=${searchParams.param}`)
-  }
-
   return (
     <>
-     <form onSubmit={submittingParams}>
+{/*      <form onSubmit={submittingParams}> */}
       <Input
         placeHolder="Search"
         icon={<FontAwesomeIcon icon={faMagnifyingGlass} size={"lg"} />}
-        onChange={(e)=>setSearchParams(prev=>{return {...prev,param:e.target.value}})}
+        onChange={(e)=> router.push(`/search?games=${e.target.value}`)}
       />
       <Button
         label={
@@ -39,7 +33,7 @@ export default function SearchBar()
           </p>
         }
       />
-     </form>
+ {/*     </form> */}
     </>
   );
 }
