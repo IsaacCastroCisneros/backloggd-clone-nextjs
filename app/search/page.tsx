@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React from 'react'
-import Results from './components/Results';
+import Results from './components/Results/Results';
+import postRequest from './components/Results/utils/postRequest';
+
 interface props
 {
   searchParams:searchParams
@@ -16,7 +18,7 @@ export default async function page({searchParams}:props)
 
   return (
       <main className="custom-container">
-        <Results query={games||''} />
+        <Results param={games||''} />
       </main>
   );
 }
